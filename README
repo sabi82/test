@@ -1,0 +1,96 @@
+Septieme Exemple.
+
+Introduction a Git
+Gestion decentralisee de repository
+
+https://git-scm.com/book/fr/v1/Démarrage-rapide-Paramétrage-à-la-première-utilisation-de-Git
+
+Identite
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+Editeur pour saisie message
+$ git config --global core.editor emacs
+
+Checker ses param
+$ git config --list
+
+Demarrage d'un depot
+$ git init
+
+Ajout de fichier que l'on souhaite suivre
+$ git add *.c
+$ git add *.h
+$ git add README CMakeLists.txt documentation
+
+Validation
+$ git commit 
+
+Log de ce qui a ete valide
+$ git log
+
+Status du rep actuel
+$ git status
+
+Cloner un repository (et non faire un checkout comme sur svn) 
+Git reçoit une copie de quasiment toutes les données dont le serveur
+dispose. Toutes les versions de tous les fichiers pour l'historique du
+projet sont téléchargées quand vous lancez git clone.
+
+Cloner un depot existant
+$ git clone git://github.com/schacon/grit.git
+En local
+$ git clone -l Seventh Height
+
+On peut utiliser https, ssh...
+
+
+Maintenant on ajoute un fichier dans le clone:
+$ touch LISEZMOI
+$ git status 
+Il est non suivi, si on veut l'ajouter au fichier suivi... git add
+Mais non encore validé
+
+Ajouter quelque chose dans LISEZMOI
+$git status 
+Montre un nouvel etat
+
+Pour visualiser la difference (generalement entre ce qui a ete cloner et ce qui est present)
+$ git diff
+
+Valider les modifications
+git commit
+
+Faire un 
+$ git status
+et constate que l'on est en avance sur la branche.
+
+Effacter un Fichier
+$ git rm fichier
+Attention cela l elimine du suivi et du repertoire
+
+$ git rm --cached LISEZMOI
+permet de le conserver en local et non suivi
+
+refaire un git commit 
+et discuter des log
+$ git log
+
+https://git-scm.com/book/fr/v1/Les-bases-de-Git-Visualiser-l-historique-des-validations (si necessaire)
+git log --pretty=format:"%an, %ar : %s"
+an : author name
+ar : date par rapport a l heure actuelle
+%s : sujet
+
+Au fait ou est le repository initial
+$ git remote -v
+
+
+Pousser son travail si necessaire:
+git push
+
+Et evidemment avant de commencer 
+git pull
+
+(matching : toutes les branches)
+(simple : la branche locale)
