@@ -80,7 +80,8 @@ https://git-scm.com/book/fr/v1/Les-bases-de-Git-Visualiser-l-historique-des-vali
 git log --pretty=format:"%an, %ar : %s"
 an : author name
 ar : date par rapport a l heure actuelle
-%s : sujet
+s : sujet
+h : resumé du checksum
 
 Au fait ou est le repository initial
 $ git remote -v
@@ -94,3 +95,19 @@ git pull
 
 (matching : toutes les branches)
 (simple : la branche locale)
+
+Pour retourner a une version precedente:
+git checkout <hash> recuperer avec le log
+
+Ca peut permettre de creer des branches... mais je vous laisse decouvrir
+
+git checkout master
+permet de revenir a la derniere version
+
+
+Et voila le cours est fini
+
+Si on veut faire des push
+git config --bool core.bare true
+Sinon au depart il faut faire 
+git init --bare
