@@ -1,4 +1,4 @@
-Septieme Exemple.
+Septieme Exemple.  git pour les versions 
 
 Introduction a Git
 Gestion decentralisee de repository
@@ -24,7 +24,7 @@ $ git add *.h
 $ git add README CMakeLists.txt documentation
 
 Validation
-$ git commit 
+$ git commit -a 
 
 Log de ce qui a ete valide
 $ git log
@@ -43,7 +43,6 @@ En local
 $ git clone -l Seventh Height
 
 On peut utiliser https, ssh...
-
 
 Maintenant on ajoute un fichier dans le clone:
 $ touch LISEZMOI
@@ -77,7 +76,7 @@ et discuter des log
 $ git log
 
 https://git-scm.com/book/fr/v1/Les-bases-de-Git-Visualiser-l-historique-des-validations (si necessaire)
-git log --pretty=format:"%an, %ar : %s"
+git log --pretty=format:"%h %an, %ar : %s"
 an : author name
 ar : date par rapport a l heure actuelle
 s : sujet
@@ -85,16 +84,6 @@ h : resumé du checksum
 
 Au fait ou est le repository initial
 $ git remote -v
-
-
-Pousser son travail si necessaire:
-git push
-
-Et evidemment avant de commencer 
-git pull
-
-(matching : toutes les branches)
-(simple : la branche locale)
 
 Pour retourner a une version precedente:
 git checkout <hash> recuperer avec le log
@@ -105,9 +94,14 @@ git checkout master
 permet de revenir a la derniere version
 
 
-Et voila le cours est fini
-
-Si on veut faire des push
+Si on veut partagé un repository
 git config --bool core.bare true
 Sinon au depart il faut faire 
 git init --bare
+
+
+Pousser son travail si necessaire:
+git push
+
+Et evidemment avant de commencer 
+git pull
